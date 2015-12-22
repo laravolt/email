@@ -6,4 +6,5 @@ return [
     'new_email_activation' => 'Untuk menyimpan perubahan email, silakan klik link aktivasi yang telah kami kirimkan ke alamat :email.',
     'activation_success'   => 'Email berhasil diperbarui.',
     'activation_failed'    => 'Token aktivasi tidak valid.',
+    'must_fill_email'      => 'Anda harus mengisi alamat email!'
 ];
