@@ -7,16 +7,13 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 /**
  * Class PackageServiceProvider
  *
- * @package LaraLeague\Email
- * @see http://laravel.com/docs/5.1/packages#service-providers
- * @see http://laravel.com/docs/5.1/providers
+ * @package Laravolt\Email
  */
 class ServiceProvider extends BaseServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
      *
-     * @see http://laravel.com/docs/5.1/providers#deferred-providers
      * @var bool
      */
     protected $defer = false;
@@ -24,7 +21,6 @@ class ServiceProvider extends BaseServiceProvider
     /**
      * Register the service provider.
      *
-     * @see http://laravel.com/docs/5.1/providers#the-register-method
      * @return void
      */
     public function register()
@@ -37,7 +33,6 @@ class ServiceProvider extends BaseServiceProvider
     /**
      * Application is booting
      *
-     * @see http://laravel.com/docs/5.1/providers#the-boot-method
      * @return void
      */
     public function boot()
@@ -49,15 +44,11 @@ class ServiceProvider extends BaseServiceProvider
         $this->registerTranslations();
         $this->registerConfigurations();
 
-        //if(! $this->app->routesAreCached() && config('email.routes')) {
-        //    $this->registerRoutes();
-        //}
     }
 
     /**
      * Register the package views
      *
-     * @see http://laravel.com/docs/5.1/packages#views
      * @return void
      */
     protected function registerViews()
@@ -74,7 +65,6 @@ class ServiceProvider extends BaseServiceProvider
     /**
      * Register the package migrations
      *
-     * @see http://laravel.com/docs/5.1/packages#publishing-file-groups
      * @return void
      */
     protected function registerMigrations()
@@ -99,7 +89,6 @@ class ServiceProvider extends BaseServiceProvider
     /**
      * Register the package translations
      *
-     * @see http://laravel.com/docs/5.1/packages#translations
      * @return void
      */
     protected function registerTranslations()
@@ -110,7 +99,6 @@ class ServiceProvider extends BaseServiceProvider
     /**
      * Register the package configurations
      *
-     * @see http://laravel.com/docs/5.1/packages#configuration
      * @return void
      */
     protected function registerConfigurations()
@@ -122,28 +110,6 @@ class ServiceProvider extends BaseServiceProvider
             $this->packagePath('config/config.php') => config_path('email.php'),
         ], 'config');
     }
-
-    /**
-     * Register the package routes
-     *
-     * @warn consider allowing routes to be disabled
-     * @see http://laravel.com/docs/5.1/routing
-     * @see http://laravel.com/docs/5.1/packages#routing
-     * @return void
-     */
-    //protected function registerRoutes()
-    //{
-    //    $this->app['router']->group([
-    //        'namespace' => __NAMESPACE__
-    //    ], function() {
-    //        // index action showing the packages
-    //        $this->app['router']->any('/email', [
-    //            'as'   => 'email:index',
-    //            'uses' => 'Controllers\EmailController@index'
-    //        ]);
-    //
-    //    });
-    //}
 
     /**
      * Loads a path relative to the package base directory
