@@ -58,7 +58,7 @@ class Email
         }
 
         $data = ['email' => $email->email];
-        $user->update($data, $email->user_id);
+        $user->update($data);
 
         \DB::table('users_emails')->whereEmail($email->email)->delete();
 
